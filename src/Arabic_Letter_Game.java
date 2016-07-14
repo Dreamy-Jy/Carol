@@ -27,10 +27,10 @@ public class Arabic_Letter_Game extends Game {
 			"kaf" , "lam" , "miim" , "nuun" , "ha" , "wow", "ya"
 	};
 	private final String [] TONED_EQUIVALENT_LATIN_SPELLINGS = {
-			"alif" , "ba" , "ta" , "tha" , "jim", "ha" , "kha" ,
-			"dal" , "dhal" , "zay", "ri" , "sin" , "scin" , "sad" ,
-			"dad" , "taʾ" , "za" , "'ayn" , "ghayn" , "fa" , "qaf" ,
-			"kaf" , "lam" , "miim" , "nuun" , "ha" , "wow", "ya"
+			"'alif" , "bā'" , "tā'" , "ṯā'" , "ǧīm", "ḥā'" , "ḫā'" ,
+			"dāl" , "ḏāl" , "zāy" , "rā'" , "sīn" , "šīn" , "ṣād" ,
+			"ḍād" , "ṭā'" , "ẓā'" , "'ayn" , "ġayn" , "fā'" , "qāf" ,
+			"kāf" , "lām" , "mīm" , "nūn" , "hā'" , "wāw", "yā'"
 	};
 	
 	
@@ -40,11 +40,13 @@ public class Arabic_Letter_Game extends Game {
 	}
 	@Override
 	public void play() {
-		// TODO Auto-generated method stub
-		
+		start();
+		loop();
+		end();
 	}
 	
-	public void start(){
+	//tested
+	private void start(){
 		System.out.println(
 				"Hello "+player.NAME+", your about to play "+this.GAME_NAME+"."
 				+"\nThis game was design to help you learn the Arabic Alphabet,\nI will post a random"
@@ -57,7 +59,7 @@ public class Arabic_Letter_Game extends Game {
 	}
 	
 	// this needs more refinement to better fine in the system of classes
-	public void loop(){
+	private void loop(){
 		String answer = "";
 		int loop_counter = 0;
 		while(true){
@@ -88,6 +90,11 @@ public class Arabic_Letter_Game extends Game {
 			}
 			
 		}
+	}
+	
+	private void end(){
+		System.out.println("This round of "+this.GAME_NAME+" is now over.\n"
+				+ "You finished with "+player.get_score()+" points.");
 	}
 	//tested
 	private boolean ask_to_exit() {
