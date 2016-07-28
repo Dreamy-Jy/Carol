@@ -5,9 +5,9 @@ public class Stub_tester {
 		Player one = new Player("Jammy");
 		Arabic_Letter_Game ome = new Arabic_Letter_Game(one);
 		
-		ome.start();
-		ome.loop();
-		
+		//ome.start();
+		//ome.loop();
+		ome.play();
 	}
 
 }
